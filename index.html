@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Stock Chatbot</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header class="app-header" role="banner">
+		<h1>Stock Chatbot</h1>
+		<p class="tagline">Quick answers about stocks and markets</p>
+	</header>
+
+	<main class="chat-container" role="main">
+		<section id="chat" class="chat" aria-live="polite" aria-relevant="additions">
+			<div class="message bot">
+				<div class="avatar" aria-hidden="true">📈</div>
+				<div class="bubble">
+					<p>Hi! I can help with quick stock info, market status, and FAQs. Try: "price of AAPL" or "is the market open?"</p>
+				</div>
+			</div>
+		</section>
+
+		<form id="chat-form" class="chat-input" autocomplete="off">
+			<label for="user-input" class="visually-hidden">Type your message</label>
+			<input id="user-input" name="message" type="text" placeholder="Ask about a stock... e.g., price TSLA" required>
+			<button type="submit" title="Send">Send</button>
+		</form>
+	</main>
+
+	<footer class="app-footer" role="contentinfo">
+		<small>For informational purposes only. Not investment advice.</small>
+	</footer>
+
+	<script src="script.js"></script>
+</body>
+</html>

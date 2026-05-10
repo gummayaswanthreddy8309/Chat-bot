@@ -1,0 +1,92 @@
+/* Base reset */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+	margin: 0;
+	font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+	color: #0f172a;
+	background: #f8fafc;
+	line-height: 1.5;
+}
+
+.visually-hidden {
+	position: absolute;
+	clip: rect(1px, 1px, 1px, 1px);
+	padding: 0;
+	border: 0;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.app-header, .app-footer {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 16px 20px;
+}
+.app-header h1 { margin: 0; }
+.tagline { margin: 4px 0 0 0; color: #475569; }
+.app-footer { color: #475569; }
+
+.chat-container {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 0 20px 24px 20px;
+	display: grid;
+	grid-template-rows: 1fr auto;
+	height: calc(100vh - 120px);
+}
+
+.chat {
+	background: #ffffff;
+	border: 1px solid #e2e8f0;
+	border-radius: 12px;
+	padding: 12px;
+	overflow-y: auto;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+.message { display: flex; gap: 10px; margin: 8px 0; align-items: flex-start; }
+.message .avatar { width: 28px; height: 28px; display: grid; place-items: center; }
+.message .bubble {
+	max-width: min(80ch, 90%);
+	padding: 10px 12px;
+	border-radius: 12px;
+	border: 1px solid #e2e8f0;
+	background: #f8fafc;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+.message.user { flex-direction: row-reverse; }
+.message.user .bubble { background: #e0f2fe; border-color: #bae6fd; }
+
+.chat-input {
+	margin-top: 10px;
+	display: grid;
+	grid-template-columns: 1fr auto;
+	gap: 8px;
+}
+.chat-input input[type="text"] {
+	padding: 12px 14px;
+	border-radius: 10px;
+	border: 1px solid #cbd5e1;
+	font-size: 16px;
+	background: #ffffff;
+}
+.chat-input button {
+	padding: 12px 16px;
+	border-radius: 10px;
+	border: 1px solid #0891b2;
+	background: #06b6d4;
+	color: #ffffff;
+	font-weight: 600;
+	cursor: pointer;
+}
+.chat-input button:hover { background: #0891b2; }
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+	.chat-container { height: calc(100vh - 140px); }
+	.message .bubble { max-width: 100%; }
+}
